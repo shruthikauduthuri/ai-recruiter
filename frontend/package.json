@@ -1,0 +1,44 @@
+{
+  "name": "ai-recruiter",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.1.6",
+    "@angular/cdk": "^19.1.4",
+    "@angular/common": "^19.1.6",
+    "@angular/compiler": "^19.1.6",
+    "@angular/core": "^19.1.6",
+    "@angular/forms": "^19.1.6",
+    "@angular/localize": "^19.1.6",
+    "@angular/material": "^19.1.4",
+    "@angular/platform-browser": "^19.1.6",
+    "@angular/platform-browser-dynamic": "^19.1.6",
+    "@angular/router": "^19.1.6",
+    "@primeng/themes": "^19.0.6",
+    "classlist.js": "^1.1.20150312",
+    "core-js": "^3.40.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^12.2.3",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "web-animations-js": "^2.3.2",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.7",
+    "@angular/cli": "^19.1.7",
+    "@angular/compiler-cli": "^19.1.6",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "typescript": "~5.7.3"
+  }
+}

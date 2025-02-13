@@ -1,0 +1,23 @@
+{
+  "name": "ai-recruiter",
+  "version": "1.0.0",
+  "description": "A MEAN stack application for AI Recruiter with roles for Admin, Recruiter, and Applicant.",
+  "main": "backend/app.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "dev": "nodemon backend/app.js",
+    "frontend": "ng serve --prefix frontend",
+    "build": "ng build --prefix frontend"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

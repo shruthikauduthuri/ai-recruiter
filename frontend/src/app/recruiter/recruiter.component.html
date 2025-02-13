@@ -1,0 +1,37 @@
+<h2>Recruiter Dashboard</h2>
+<p>Welcome to the Recruiter Dashboard. Here you can view the list of applicants.</p>
+
+<p-table [value]="applicants">
+  <ng-template pTemplate="header">
+    <tr>
+      <th> Applicant ID</th>
+      <th>Applicant Name</th>
+      <th>Email</th>
+      <th> Position</th>
+      <th>Experience</th>
+      <th>Status</th>
+      <th>View Report</th>
+      <th>Generate Questions</th>
+      <th>Schedule Interview</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-applicant>
+    <tr>
+      <td>{{ applicant.applicant_id }}</td>
+      <td>{{ applicant.name }}</td>
+      <td>{{ applicant.email }}</td>
+      <td>{{ applicant.position }}</td>
+      <td>{{ applicant.experience }}</td>
+      <td>{{ applicant.status }}</td>
+      <td>
+        <button (click)="viewReport(applicant.applicant_id)">View Report</button>
+      </td>
+      <td>
+        <button (click)="generateQuestions(applicant.applicant_id)">Generate Questions</button>
+      </td>
+      <td>
+        <button (click)="scheduleInterview(applicant.applicant_id)">Schedule Interview</button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
