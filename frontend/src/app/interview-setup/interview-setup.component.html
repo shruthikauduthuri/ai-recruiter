@@ -1,0 +1,51 @@
+<div class="setup-container">
+  <h2>Interview Setup</h2>
+  
+  <div class="video-preview">
+    <video #videoElement autoplay playsinline muted></video>
+    <div class="camera-overlay" *ngIf="!deviceChecks.camera">
+      <i class="fas fa-camera-slash"></i>
+      <p>Camera access required</p>
+    </div>
+  </div>
+
+  <div class="device-checks">
+    <div class="check-item">
+      <span>
+        <i class="fas fa-camera"></i>
+        Camera Access
+      </span>
+      <div class="status" [class.success]="deviceChecks.camera" [class.error]="!deviceChecks.camera">
+      </div>
+    </div>
+    
+    <div class="check-item">
+      <span>
+        <i class="fas fa-microphone"></i>
+        Microphone Access
+      </span>
+      <div class="status" [class.success]="deviceChecks.microphone" [class.error]="!deviceChecks.microphone">
+      </div>
+    </div>
+    
+    <div class="check-item">
+      <span>
+        <i class="fas fa-wifi"></i>
+        Network Connection
+      </span>
+      <div class="status" [class.success]="deviceChecks.network" [class.error]="!deviceChecks.network">
+      </div>
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button 
+      [disabled]="!deviceChecks.camera || !deviceChecks.microphone || !deviceChecks.network"
+      (click)="startInterview()">
+      Start Interview
+    </button>
+    <button class="retry-button" (click)="retryChecks()" *ngIf="!allChecksPass()">
+      Retry Checks
+    </button>
+  </div>
+</div>

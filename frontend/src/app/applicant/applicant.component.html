@@ -1,11 +1,11 @@
 <h2>Applicant Dashboard</h2>
 <p>Welcome to the Applicant Dashboard. Here you can view your application status and manage your profile.</p>
-<div>
+<div class="applications-container">
     <h3>Your Applications</h3>
     <ul>
-        <li>Application 1: Status - Pending</li>
-        <li>Application 2: Status - Interview Scheduled</li>
-        <li>Application 3: Status - Rejected</li>
+        <li class="status-pending">Pending Application</li>
+        <li class="status-scheduled" [routerLink]="['/interview-setup']">Scheduled Interview</li>
+        <li class="status-rejected">Rejected Application</li>
     </ul>
 </div>
 <div>

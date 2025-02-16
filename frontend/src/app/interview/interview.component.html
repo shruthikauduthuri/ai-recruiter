@@ -1,0 +1,47 @@
+<div class="interview-container">
+  <div class="question-header">
+    <div class="question-number">Question {{ currentQuestionIndex + 1 }} of 5</div>
+    <div class="timer-container">
+      <div class="timer" [class.prep-timer]="isPreparationTime">
+        {{ isPreparationTime ? 'Preparation Time: ' : 'Answer Time: ' }} {{ timeRemaining }}s
+      </div>
+      <div class="progress-bar">
+        <div class="progress" 
+             [style.width.%]="getProgressPercentage()" 
+             [class.prep-progress]="isPreparationTime">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="question-container">
+    <div class="question">
+      {{ selectedQuestions[currentQuestionIndex] }}
+      <button class="replay-button" (click)="replayQuestion()" title="Replay question">
+        <i class="fas fa-volume-up"></i>
+      </button>
+    </div>
+    
+    <div class="preparation-notice" *ngIf="isPreparationTime">
+      <p>Take your time to prepare your answer</p>
+      <button class="skip-prep" (click)="skipPreparation()">Start Answering</button>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video #videoElement autoplay muted playsinline></video>
+    <div class="recording-indicator" *ngIf="isRecording">
+      <span class="dot"></span> Recording
+    </div>
+    <div class="camera-warning" *ngIf="!isCameraActive">
+      <i class="fas fa-exclamation-triangle"></i>
+      Camera disconnected! Interview will be terminated.
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="next-button" (click)="nextQuestion()" [disabled]="isPreparationTime">
+      Next Question
+    </button>
+  </div>
+</div>

@@ -1,9 +1,42 @@
-<h1>AI Interviewer Application</h1>
-<nav>
-  <ul>
-    <li><a routerLink="/admin">Admin Dashboard</a></li>
-    <li><a routerLink="/recruiter">Recruiter Dashboard</a></li>
-    <li><a routerLink="/applicant">Applicant Dashboard</a></li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+
+<div class="container">
+  <h1 class="text-center animate-fade-in">AI Interviewer Application</h1>
+  
+  <div class="card-grid">
+      <!-- Admin Dashboard Card -->
+      <div class="nav-card" (click)="navigateTo('/admin')">
+          <div class="card-icon">
+              <i class="fas fa-user-shield"></i>
+          </div>
+          <h2>Admin Dashboard</h2>
+          <p>Manage users, view analytics, and control system settings</p>
+          <div class="card-arrow">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+
+      <!-- Recruiter Dashboard Card -->
+      <div class="nav-card" (click)="navigateTo('/recruiter')">
+          <div class="card-icon">
+              <i class="fas fa-users"></i>
+          </div>
+          <h2>Recruiter Dashboard</h2>
+          <p>Manage candidates, schedule interviews, and track applications</p>
+          <div class="card-arrow">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+
+      <!-- Applicant Dashboard Card -->
+      <div class="nav-card" (click)="navigateTo('/applicant')">
+          <div class="card-icon">
+              <i class="fas fa-user-graduate"></i>
+          </div>
+          <h2>Applicant Dashboard</h2>
+          <p>View applications, take interviews, and track progress</p>
+          <div class="card-arrow">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</div>

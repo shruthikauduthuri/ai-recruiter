@@ -95,5 +95,8 @@
       }
     }
   },
-  "defaultProject": "ai-recruiter"
+  "defaultProject": "ai-recruiter",
+  "cli": {
+    "analytics": "07138dc8-950c-4e71-80eb-19214582222d"
+  }
 }

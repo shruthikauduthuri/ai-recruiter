@@ -1,1 +1,243 @@
-/* This file is intentionally left blank. */
+/* This file is intentionally left blank. *//* Main Container */
+:host {
+    display: block;
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: slideDown 0.5s ease-out;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: #64748b;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Section Containers */
+div {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    animation: slideUp 0.8s ease-out;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: #4f46e5;
+}
+
+/* Section Headers */
+h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    border-radius: 2px;
+}
+
+/* Application List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: #f8fafc;
+    color: #1f2937;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid #2563eb;
+    animation: slideIn 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li:hover {
+    transform: translateX(5px);
+    background: #f1f5f9;
+}
+
+/* Status Colors */
+.status-pending {
+    border-left-color: #fbbf24; /* Yellow */
+}
+
+.status-scheduled {
+    border-left-color: #22c55e;
+    background-color: #dcfce7;  /* Light green background */
+    color: #1f2937 !important;  /* Dark gray/black text */
+}
+
+.status-scheduled:hover {
+    background-color: #bbf7d0;  /* Slightly darker green on hover */
+    transform: translateX(5px);
+}
+
+.status-rejected {
+    border-left-color: #ef4444; /* Red */
+}
+
+/* Profile Information */
+div p {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+div p::before {
+    content: '•';
+    color: #2563eb;
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+}
+
+/* Button Style */
+button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+    margin-top: 1rem;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :host {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    div {
+        padding: 1.5rem;
+    }
+
+    li {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

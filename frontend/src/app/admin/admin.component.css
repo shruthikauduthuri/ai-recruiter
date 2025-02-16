@@ -34,3 +34,194 @@
 .button:hover {
     background-color: #0056b3;
 }
+
+/* Main Container Styles */
+:host {
+    display: block;
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: slideDown 0.5s ease-out;
+}
+
+p {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 2rem 0 1rem;
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Button Styles */
+button {
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+    animation: fadeIn 0.8s ease-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    animation: slideUp 0.8s ease-out;
+}
+
+thead {
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    color: white;
+}
+
+th {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+    transform: scale(1.01);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :host {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

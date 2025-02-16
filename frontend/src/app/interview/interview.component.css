@@ -1,0 +1,272 @@
+.interview-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.question-number {
+  font-size: 1.2rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.timer {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.timer.prep-timer {
+  background-color: #2563eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #dc3545;
+  transition: width 1s linear;
+}
+
+.progress.prep-progress {
+  background-color: #2563eb;
+}
+
+.question-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.question {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.replay-button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: auto;
+  transition: transform 0.2s;
+}
+
+.replay-button:hover {
+  transform: scale(1.1);
+  color: #1d4ed8;
+}
+
+.replay-button i {
+  font-size: 1.2rem;
+}
+
+.preparation-notice {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+.preparation-notice p {
+  color: #2563eb;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: #f3f4f6;
+  aspect-ratio: 16/9;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+.skip-prep {
+  background-color: #2563eb;
+  color: white;
+}
+
+.skip-prep:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.next-button {
+  background-color: #059669;
+  color: white;
+}
+
+.next-button:hover {
+  background-color: #047857;
+  transform: translateY(-1px);
+}
+
+.next-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .interview-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .question-container .question {
+    font-size: 1.4rem;
+  }
+
+  .video-container {
+    margin: 1rem auto;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .timer-container {
+    max-width: 250px;
+  }
+}
+
+
+/* ... existing styles ... */
+
+.camera-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(220, 53, 69, 0.9);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .camera-warning i {
+    font-size: 1.2rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+.recording-indicator {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.recording-indicator .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
