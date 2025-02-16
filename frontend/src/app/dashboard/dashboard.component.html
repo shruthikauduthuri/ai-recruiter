@@ -1,10 +1,9 @@
-
 <div class="container">
   <h1 class="text-center animate-fade-in">AI Interviewer Application</h1>
   
   <div class="card-grid">
       <!-- Admin Dashboard Card -->
-      <div class="nav-card" (click)="navigateTo('/admin')">
+      <div class="nav-card" (click)="navigateToAdmin()">
           <div class="card-icon">
               <i class="fas fa-user-shield"></i>
           </div>
@@ -16,7 +15,7 @@
       </div>
 
       <!-- Recruiter Dashboard Card -->
-      <div class="nav-card" (click)="navigateTo('/recruiter')">
+      <div class="nav-card" (click)="navigateToRecruiter()">
           <div class="card-icon">
               <i class="fas fa-users"></i>
           </div>
@@ -28,7 +27,7 @@
       </div>
 
       <!-- Applicant Dashboard Card -->
-      <div class="nav-card" (click)="navigateTo('/applicant')">
+      <div class="nav-card" (click)="navigateToApplicant()">
           <div class="card-icon">
               <i class="fas fa-user-graduate"></i>
           </div>
@@ -40,3 +39,6 @@
       </div>
   </div>
 </div>
+
+
+  

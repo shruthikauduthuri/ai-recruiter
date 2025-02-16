@@ -11,8 +11,16 @@ export class DashboardComponent {
 
   constructor(private router: Router) { }
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
+  navigateToAdmin() {
+    this.router.navigate(['/admin']);
+  }
+
+  navigateToRecruiter() {
+    this.router.navigate(['/recruiter']);
+  }
+
+  navigateToApplicant() {
+    this.router.navigate(['/applicant']);
   }
 
 }

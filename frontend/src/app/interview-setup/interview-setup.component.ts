@@ -28,19 +28,33 @@ export class InterviewSetupComponent implements OnInit {
   async checkDevices() {
     // Check camera and start preview
     try {
+      // Get video stream only for preview
       this.mediaStream = await navigator.mediaDevices.getUserMedia({ 
-        video: true,
-        audio: true 
+        video: {
+          width: { ideal: 1280 },
+          height: { ideal: 720 }
+        },
+        audio: false  // Don't capture audio in preview
       });
       this.deviceChecks.camera = true;
       
-      // Set video stream to preview
+      // Set video stream to preview with muting
       if (this.videoElement && this.videoElement.nativeElement) {
-        this.videoElement.nativeElement.srcObject = this.mediaStream;
+        const videoElement = this.videoElement.nativeElement;
+        videoElement.srcObject = this.mediaStream;
+        videoElement.muted = true;
+        videoElement.volume = 0;
       }
       
-      // Check microphone (already granted with getUserMedia)
+      // Check microphone separately without preview
+      const audioStream = await navigator.mediaDevices.getUserMedia({ 
+        audio: true 
+      });
       this.deviceChecks.microphone = true;
+      
+      // Stop audio stream immediately after check
+      audioStream.getTracks().forEach(track => track.stop());
+
     } catch (err) {
       console.error('Device check failed:', err);
       this.deviceChecks.camera = false;
